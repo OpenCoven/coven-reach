@@ -1,0 +1,44 @@
+[package]
+name = "coven-reach"
+version = "0.1.0"
+edition = "2021"
+description = "Coven-native MCP server for filesystem and web operations"
+license = "MIT"
+repository = "https://github.com/OpenCoven/coven-reach"
+authors = ["OpenCoven Contributors"]
+
+[[bin]]
+name = "coven-reach"
+path = "src/main.rs"
+
+[lib]
+name = "coven_reach"
+path = "src/lib.rs"
+
+[dependencies]
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+anyhow = "1"
+thiserror = "1"
+walkdir = "2"
+glob = "0.3"
+zip = "2"
+tar = "0.4"
+flate2 = "1"
+sha2 = "0.10"
+once_cell = "1"
+md-5 = "0.10"
+hex = "0.4"
+mime_guess = "2"
+chrono = { version = "0.4", features = ["serde"] }
+similar = "2"
+regex = "1"
+ureq = { version = "2", features = ["tls"] }
+htmd = "0.1"
+
+[dev-dependencies]
+tempfile = "3"
+
+[profile.release]
+strip = true
+opt-level = 3
