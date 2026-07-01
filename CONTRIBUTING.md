@@ -1,10 +1,9 @@
 # Contributing to coven-reach
 
-> **⚠️ Contribution Status — Updated May 2026**
+> **⚠️ Contribution Status — Updated June 2026**
 >
-> **We are currently only accepting Issues and Bug Reports.**
-> Pull Requests will not be reviewed or merged until **July 2026**.
-> Please do not open PRs at this time — they will be closed without review.
+> **Independence Day PR Event:** external Pull Requests open starting **Saturday, July 4, 2026**.
+> Until then, we are accepting Issues and Bug Reports only.
 > If you have a fix or feature in mind, open an issue to track it.
 
 ---
@@ -21,4 +20,4 @@ Please include:
 
 ## Feature requests
 
-Open an issue describing the use case. PRs for new features will not be reviewed until July 2026.
+Open an issue describing the use case. External PRs for new features open starting Saturday, July 4, 2026, during the Independence Day PR Event.
