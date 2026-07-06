@@ -52,3 +52,37 @@ tests/
   }
 }
 ```
+
+## Contributing as an agent (branch, PR, CI)
+
+- **Never push to `main`.** Every change lands via a PR with green CI. Branch from current `origin/main`.
+- **Fresh branch per task**; use a worktree if multiple sessions may touch this repo:
+  ```sh
+  git fetch origin main
+  git worktree add -b <branch> /tmp/reach-<branch> origin/main
+  ```
+- Keep the diff scoped to one concern; conventional-commit subjects (`feat:`, `fix:`, `docs:`, `chore:`, `refactor:`).
+- Run the gates locally before opening the PR:
+  ```sh
+  cargo fmt --all --check
+  cargo clippy --all-targets -- -D warnings
+  cargo test -- --test-threads=1   # tests share COVEN_REACH_ALLOWED_PATHS; run sequentially
+  ```
+- After merge: delete the remote branch, remove your local worktree/branch.
+
+## Attribution — credit contributors correctly
+
+When you re-land or build on someone else's work (a fork PR, an issue author's proposal, a co-author), **credit the human contributor with a working GitHub-linked trailer** so they appear in the contributors graph and on their profile:
+
+```
+Co-authored-by: Full Name <ID+username@users.noreply.github.com>
+```
+
+- Use the **numeric-id no-reply form**. Get the id with `gh api users/<login> --jq .id`.
+- **Never** use a machine or `.local` email (e.g. `name@Someones-Mac.local`) in a co-author trailer — it links to no account and gives **zero** credit.
+- When a squash-merge folds a contributor's PR into an internal branch, preserve their `Co-authored-by:` line in the squash commit message.
+- Credit **people**, not AI tools.
+
+## Claude Code
+
+`CLAUDE.md` points here — this file is the source of truth for both.
